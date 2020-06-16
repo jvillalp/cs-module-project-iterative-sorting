@@ -7,19 +7,60 @@ def selection_sort(arr):
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
+        #cur_index in the array
+        minimum = arr[cur_index]
+        #for range of array from i+1 to len(array)
+        for j in range(i + 1, len(arr)):
+        #if element in array is less than curent_index
+            if arr[j] < minimum:
+            #let array[current_index] = array[j] in loop/list and smallest_index is now j in the array
+                minimum = arr[j]
+                smallest_index = j
+        #used to temperarly store previous i in array while  arr[i] being set as cur_index to later set temp as the smallest_index
+        temp = arr[i]
+        arr[i] = minimum
+        arr[smallest_index] = temp
 
+        # for j in range (cur_index + 1, len(arr)):
+        #     if arr[j] < arr[smallest_index]:
+        #         smallest_index = j
 
-        # TO-DO: swap
-        # Your code here
+        #         arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
+        
+        #if smallest_index = 0
+        #if i in cur_index > smallest_index:
+            #we want the cur_index to stay in its space
+
+        #if i in cur_index < smallest_index:
+            #we want the cur_index to swap with smallest_index
 
     return arr
-
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
-
-
+    #needs to be set to true to start and continue while loop until we reach end of array
+    swaps = True
+    while swaps:
+        #now set to true unless index is NOT less than the current index
+        swaps = False
+        # for i in range 0 to last element in array 
+        for i in range(0, len(arr) - 1):
+            #the 'neigbor' index
+            compare_index = i + 1
+            #while neighbor index is less than the length of array and i in array is greater than neighbor index of array
+            while compare_index < len(arr) and arr[i] > arr[compare_index]:
+                    #used to temperarly store previous i in array while  arr[i] being set as compare_index (neighbor index)
+                temp = arr[i]
+                arr[i] = arr[compare_index]
+                #temporarly store neighbor index
+                arr[compare_index] = temp
+                #increase index by 1 before continuing the wild loop to get right match with i
+                compare_index += 1
+                #increae i by one before wild loop for next i
+                i += 1
+                #when swaps equal to True, begin while look again 
+                swaps = True
     return arr
 
 '''
