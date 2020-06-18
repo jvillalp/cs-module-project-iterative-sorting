@@ -16,5 +16,5 @@
 # Having issues with this. I am trying to print all numbers divisible by 3. Getting an error instead. 
 list_num = [85, 46, 27, 81, 94, 9, 27, 38, 43, 99, 37, 63, 31, 42, 14]
 for num in list_num:
-    if num % 3 = 0:
+    if num % 3 == 0:
         print(num)
